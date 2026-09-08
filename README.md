@@ -325,8 +325,6 @@ REDIS_URL=
 JWT_SECRET=
 ```
 
-**Never commit real API keys, passwords, tokens, or secrets to GitHub.**
-
 ---
 
 ### 3. Start Infrastructure
