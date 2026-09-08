@@ -266,7 +266,7 @@ Agent-flight/
 └── README.md
 ```
 
-> **Note:** The structure above represents a recommended organization for the proposed platform. It should be updated as the actual implementation evolves.
+>#temporary file structure
 
 ---
 
