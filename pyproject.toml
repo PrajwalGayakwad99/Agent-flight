@@ -1,0 +1,23 @@
+[project]
+name = "agentflight-backend"
+version = "0.1.0"
+description = "AgentFlight FastAPI Gateway and Dynamic Agent Adapter Layer"
+requires-python = ">=3.11"
+
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "pydantic-settings",
+    "httpx",
+    "python-multipart",
+    "PyJWT",
+    "redis",
+    "python-dotenv"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio"
+]
