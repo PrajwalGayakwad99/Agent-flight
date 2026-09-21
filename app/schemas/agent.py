@@ -9,7 +9,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from typing import Any, Optional
 
-from pydantic import BaseModel, Field, HttpUrl, field_validator
+from pydantic import BaseModel, Field, field_validator
 
 
 class AuthenticationConfig(BaseModel):
@@ -51,7 +51,10 @@ class AgentCreate(BaseModel):
         description="Adapter protocol: 'openai', 'ollama', or 'custom_rest'.",
     )
     endpoint_url: str = Field(..., description="Fully-qualified URL of the agent's inference endpoint.")
-    model: str = Field(..., description="Model identifier (e.g. 'gpt-4o', 'llama3:8b').")
+    model: Optional[str] = Field(
+        default=None,
+        description="Model identifier (e.g. 'gpt-4o', 'llama3:8b'). Optional at registration time.",
+    )
     system_prompt: str = Field(
         default="",
         description="Optional system prompt prepended to every agent invocation.",
@@ -83,7 +86,7 @@ class AgentResponse(BaseModel):
     name: str
     protocol: str
     endpoint_url: str
-    model: str
+    model: Optional[str]
     system_prompt: str
     tools: list[dict[str, Any]]
     authentication: AuthenticationConfig
